@@ -1,16 +1,11 @@
-# stackHelpOver
+# Stack Help Over
 
-A new Flutter project.
+Only Flutter problem solutions.(stack overflow or any request)
 
-## Getting Started
+# Solutions
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+1. lib/form =>  [stackoverflow](https://stackoverflow.com/questions/61263795/flutter-raisedbutton-stays-null)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+2. lib/list_serach=> How can i search text in listview?
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
