@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stackHelpOver/pinch_image_zoom/pinch_image_zoom.dart';
+import 'package:stackHelpOver/pinch_image_zoom/pinch_image_zoom_view.dart';
 
 import 'list_search/list_search.dart';
 
@@ -9,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: ListSearch(),
+      home: PincImageView(),
     );
   }
 }
