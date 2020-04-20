@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stackHelpOver/async_func/weather_view.dart';
 import 'package:stackHelpOver/pinch_image_zoom/pinch_image_zoom.dart';
 import 'package:stackHelpOver/pinch_image_zoom/pinch_image_zoom_view.dart';
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: PincImageView(),
+      home: WeatherView(),
     );
   }
 }
