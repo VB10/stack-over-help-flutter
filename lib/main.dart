@@ -10,6 +10,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // WidgetsBinding.instance.addPersistentFrameCallback((timeStamp) { })
     return MaterialApp(
       title: 'Material App',
       home: WeatherView(),
