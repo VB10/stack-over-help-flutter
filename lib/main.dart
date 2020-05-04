@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stackHelpOver/async_func/weather_view.dart';
+import 'package:stackHelpOver/grid_fab/grid_fab_view.dart';
+import 'package:stackHelpOver/instagram_ui/instagram_view.dart';
 import 'package:stackHelpOver/pinch_image_zoom/pinch_image_zoom.dart';
 import 'package:stackHelpOver/pinch_image_zoom/pinch_image_zoom_view.dart';
 
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
     // WidgetsBinding.instance.addPersistentFrameCallback((timeStamp) { })
     return MaterialApp(
       title: 'Material App',
-      home: WeatherView(),
+      home: InstagramView(),
     );
   }
 }
