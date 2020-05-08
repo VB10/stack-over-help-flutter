@@ -16,3 +16,4 @@ Only Flutter problem solutions.(stack overflow or any request)
    [stackoverflow](https://stackoverflow.com/questions/61557729/how-to-fix-tab-at-top-while-scrolling-inside-listview-in-flutter)
 
 6. lib/html-parser => Flutter - Rendering a HTML Unordered List [stackoverflow](https://stackoverflow.com/questions/61606636/flutter-rendering-a-html-unordered-list)
+7. lib/switch-on => Selecting between diferent paddings in Flutter [stackoverflow](https://stackoverflow.com/questions/61673485/selecting-between-diferent-paddings-in-flutter/61674684#61674684)
