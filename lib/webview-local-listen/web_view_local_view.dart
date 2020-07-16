@@ -44,15 +44,20 @@ function myFunction() {
   Uri get uri => Uri.dataFromString(body, mimeType: 'text/html');
 
   final flutterWebviewPlugin = FlutterWebviewPlugin();
-
+  Timer timer;
   @override
   void initState() {
     super.initState();
 
-    Timer.periodic(Duration(seconds: 1), (timer) async {
+    timer = Timer.periodic(Duration(seconds: 1), (timer) async {
       String script = 'document.getElementById("myDIV").innerHTML';
       var title = await flutterWebviewPlugin.evalJavascript(script);
       print("$title");
+      if (title == "Veli") {
+        timer.cancel();
+        this.timer.cancel();
+        Navigator.pop(context);
+      }
     });
   }
 
