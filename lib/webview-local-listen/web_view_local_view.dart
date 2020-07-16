@@ -43,6 +43,8 @@ function myFunction() {
 
   Uri get uri => Uri.dataFromString(body, mimeType: 'text/html');
 
+  final int maxDuration = 120;
+
   final flutterWebviewPlugin = FlutterWebviewPlugin();
   Timer timer;
   @override
@@ -53,7 +55,8 @@ function myFunction() {
       String script = 'document.getElementById("myDIV").innerHTML';
       var title = await flutterWebviewPlugin.evalJavascript(script);
       print("$title");
-      if (title == "Veli") {
+
+      if (title == "Veli" || maxDuration < 0) {
         timer.cancel();
         this.timer.cancel();
         Navigator.pop(context);
