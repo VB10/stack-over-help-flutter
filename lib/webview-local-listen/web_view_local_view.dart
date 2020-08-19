@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class WebViewLocalView extends StatefulWidget {
   @override
@@ -47,6 +46,7 @@ function myFunction() {
 
   final flutterWebviewPlugin = FlutterWebviewPlugin();
   Timer timer;
+
   @override
   void initState() {
     super.initState();
@@ -56,19 +56,31 @@ function myFunction() {
       var title = await flutterWebviewPlugin.evalJavascript(script);
       print("$title");
 
-      if (title == "Veli" || maxDuration < 0) {
-        timer.cancel();
-        this.timer.cancel();
+      if (maxDuration < 0) {
+        Navigator.pop(context);
+      } else {
+        if (title == "Veli") {
+          timer.cancel();
+          this.timer.cancel();
+        }
+      }
+    });
+
+    flutterWebviewPlugin.onUrlChanged.listen((event) {
+      if (event.contains("100")) {
         Navigator.pop(context);
       }
     });
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    timer.cancel();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    // return WebView(
-    //   initialUrl: Uri.dataFromString(body, mimeType: 'text/html').toString(),
-    // );
     return WebviewScaffold(
       url: uri.toString(),
       debuggingEnabled: true,
