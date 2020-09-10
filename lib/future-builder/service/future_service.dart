@@ -15,7 +15,6 @@ class FutureService extends IFutureService {
     switch (response.statusCode) {
       case HttpStatus.ok:
         return response.data;
-        break;
       default:
         return ErrorModel(response.statusMessage);
     }

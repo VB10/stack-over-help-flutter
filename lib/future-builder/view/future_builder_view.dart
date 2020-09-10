@@ -20,23 +20,24 @@ class _FutureViewState extends State<FutureView> with AutomaticKeepAliveClientMi
   IFutureService futureService;
 
   Future<List<HttpCatModel>> http;
+  Future<List<UserModel>> httpUser;
   @override
   void initState() {
     super.initState();
     futureService = FutureService();
+    httpUser = futureService.getHttpUserModel(userPath);
   }
 
   @override
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
-      appBar: AppBar(title: buildTitleLaoding),
-      body: futureService.getHttpUserModel(userPath).toBuild<List<UserModel>>(
-        onSucces: (data) {
-          return buildListViewUser(data);
-        },
-      ),
-    );
+        appBar: AppBar(title: buildTitleLaoding),
+        body: httpUser.toBuild<List<UserModel>>(
+          onSucces: (data) {
+            return buildListViewUser(data);
+          },
+        ));
   }
 
   ListView buildListViewUser(List<UserModel> users) {
