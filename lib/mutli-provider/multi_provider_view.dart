@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:stackHelpOver/mutli-provider/sample_providers.dart';
 
 class MulitProxyProviderSample extends StatelessWidget {
   @override
@@ -83,38 +84,5 @@ class _MultiProviderView2State extends State<MultiProviderView2> {
         ],
       ),
     );
-  }
-}
-
-// Models
-class UserManager extends ChangeNotifier {
-  User user;
-
-  Future<void> getUserData() async {
-    await Future.delayed(Duration(seconds: 1));
-    user = User("veli");
-    notifyListeners();
-  }
-}
-
-class User {
-  final String name;
-
-  User(this.name);
-}
-
-class HomeManager extends ChangeNotifier {
-  User user;
-
-  List<User> sampleUser = [];
-  void setUser(User user) {
-    this.user = user;
-    getUserOnFakeDatabase();
-  }
-
-  Future<void> getUserOnFakeDatabase() async {
-    await Future.delayed(Duration(seconds: 1));
-    sampleUser = List.generate(10, (index) => User(index.toString()));
-    notifyListeners();
   }
 }
